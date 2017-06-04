@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th> Purpose</th>
+			<th> Amount</th>
+			<th> Cost</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for expense in expenses %}
+		<tr>
+			<td>{{ expense.purpose}}</td>
+			<td>{{ expense.amount}}</td>
+			<td>{{ expense.date}}</td>
+		</tr>
+		{%endfor%}
+	</tbody>
+	
+<a class="btn btn-primary" href="{% url 'add-expense' %}">Add New Expense</a>
+</table>
+{% endblock %}
